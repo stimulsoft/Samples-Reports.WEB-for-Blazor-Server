@@ -1,0 +1,42 @@
+﻿@page "/"
+@using Stimulsoft.Base
+@using Stimulsoft.Report
+@using Stimulsoft.Report.Blazor
+@using Stimulsoft.Report.Web
+
+<!--Report Designer-->
+<StiBlazorDesigner Report="@report" Options="@options"></StiBlazorDesigner>
+
+@code
+{
+    //Report object to use in designer
+    private StiReport report;
+
+    //Options object
+    private StiBlazorDesignerOptions options;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //Init base font
+        StiFontCollection.AddFontFile($"Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
+
+        //Init options object
+        options = new StiBlazorDesignerOptions();
+
+        //Set some options
+        options.Toolbar.ShowPageButton = false;
+        options.Toolbar.ShowInsertButton = false;
+        options.Toolbar.ShowLayoutButton = false;
+        options.Appearance.ShowTooltips = false;
+        options.Appearance.ShowDialogsHelp = false;
+        options.Theme = StiDesignerTheme.Office2013LightGrayCarmine;
+
+        //Create empty report object
+        report = new StiReport();
+
+        //Load report template
+        report.Load($"Reports/TwoSimpleLists.mrt");
+    }
+}

@@ -1,0 +1,43 @@
+﻿@page "/"
+@using Stimulsoft.Base
+@using Stimulsoft.Report
+@using Stimulsoft.Report.Blazor
+@using Stimulsoft.Report.Web
+
+<!--Report viewer-->
+<StiBlazorViewer Report="@reportObject" Options="@options" />
+
+@code
+{
+    //Report object to use in viewer
+    private StiReport reportObject;
+
+    //Options object
+    private StiBlazorViewerOptions options;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //Init base font
+        StiFontCollection.AddFontFile($"Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
+
+        //Init options object
+        options = new StiBlazorViewerOptions();
+
+        //Set option to hide toolbar
+        options.Toolbar.Visible = false;
+
+        //View mode to show all pages
+        options.Toolbar.ViewMode = StiWebViewMode.Continuous;
+
+        //Turning on the full-screen mode
+        options.Appearance.FullScreenMode = true;
+
+        //Create empty report object
+        reportObject = new Stimulsoft.Report.StiReport();
+
+        //Load report template
+        reportObject.Load($"Reports/TwoSimpleLists.mrt");
+    }
+}

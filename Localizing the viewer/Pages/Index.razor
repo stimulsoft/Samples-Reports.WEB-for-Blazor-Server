@@ -1,0 +1,26 @@
+﻿@page "/"
+@using Stimulsoft.Base
+@using Stimulsoft.Report
+@using Stimulsoft.Report.Blazor
+
+<!--Report viewer-->
+<StiBlazorViewer Report="@report" Localization="Localization/pl.xml" />
+
+@code
+{
+    private StiReport report;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //Init base font
+        StiFontCollection.AddFontFile($"Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
+
+        //Create empty report object
+        report = new StiReport();
+
+        //Load report template
+        report.Load($"Reports/TwoSimpleLists.mrt");
+    }
+}

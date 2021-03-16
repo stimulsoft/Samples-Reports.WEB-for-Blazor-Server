@@ -1,0 +1,71 @@
+﻿@page "/"
+@using Stimulsoft.Base
+@using Stimulsoft.Report
+@using Stimulsoft.Report.Blazor
+
+<div align="center">
+    <button class="alert" @onclick="SetFirstDataSet">First dataset</button>
+    <button class="alert" @onclick="SetSecondDataSet">Second dataset</button>
+</div>
+<br />
+
+<StiBlazorViewer Report="@report" />
+
+@code
+{
+    private StiReport report;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //Init base font
+        StiFontCollection.AddFontFile($"Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
+
+        //Create empty report object
+        report = new StiReport();
+
+        //Load report template
+        report.Load($"Reports/Report.mrt");
+    }
+
+    private void SetFirstDataSet()
+    {
+        //Delete connections in the report template
+        report.Dictionary.Databases.Clear();
+
+        //Load new data from XML file
+        var data = new System.Data.DataSet();
+        data.ReadXml($"Data/Demo1.xml");
+
+        //Register new data in the report template
+        report.RegData(data);
+
+        //Synchronize the dictionary with registered data
+        //Not necessary if the structure of the loaded data is the same as in the template
+        report.Dictionary.Synchronize();
+
+        //Re-render report
+        report.Render();
+    }
+
+    private void SetSecondDataSet()
+    {
+        //Delete connections in the report template
+        report.Dictionary.Databases.Clear();
+
+        //Load new data from XML file
+        var data = new System.Data.DataSet();
+        data.ReadXml($"Data/Demo2.xml");
+
+        //Register new data in the report
+        report.RegData(data);
+
+        //Synchronize the dictionary with registered data
+        //Not necessary if the structure of the loaded data is the same as in the template
+        report.Dictionary.Synchronize();
+
+        //Re-render report
+        report.Render();
+    }
+}

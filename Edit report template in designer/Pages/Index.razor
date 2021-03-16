@@ -1,0 +1,33 @@
+﻿@page "/"
+@using Stimulsoft.Base
+@using Stimulsoft.Report
+@using Stimulsoft.Report.Blazor
+@using Stimulsoft.Report.Web
+
+<!--Report designer-->
+<StiBlazorDesigner Report="@reportObject" OnSaveReport="@SaveReport" />
+
+@code
+{
+    //Report object to use in viewer
+    private StiReport reportObject;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //Init base font
+        StiFontCollection.AddFontFile($"Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
+
+        //Create empty report object
+        reportObject = new StiReport();
+
+        //Load report template
+        reportObject.Load($"Reports/TwoSimpleLists.mrt");
+    }
+
+    private void SaveReport(StiSaveReportEventArgs args)
+    {
+        args.Report.Save($"Reports/TwoSimpleLists.mrt");
+    }
+}

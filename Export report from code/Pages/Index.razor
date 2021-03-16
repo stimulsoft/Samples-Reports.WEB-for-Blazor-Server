@@ -1,0 +1,60 @@
+﻿@page "/"
+@using Stimulsoft.Base
+@using Stimulsoft.Report
+
+<div align="center">
+    <button class="alert" @onclick="ExportReportAsHTML">Export as HTML</button>
+    <br /><br />
+    <button class="alert" @onclick="ExportReportAsPDF">Export as PDF</button>
+    <br /><br />
+    <p>@message</p>
+</div>
+
+@code
+{
+    private MarkupString message;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //Init base font
+        StiFontCollection.AddFontFile($"Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
+    }
+
+    private void ExportReportAsHTML()
+    {
+        //Create empty report object
+        var report = new StiReport();
+
+        //Load report template
+        report.Load($"Reports/TwoSimpleLists.mrt");
+
+        //Render, w/out showing progress
+        report.Render(false);
+
+        //Export to html file
+        var _exportFilePath = $"Reports/TwoSimpleLists_{DateTime.Now.ToString("yyyy-dd-MM_HH-mm-ss")}.html";
+        report.ExportDocument(Stimulsoft.Report.StiExportFormat.Html, _exportFilePath);
+
+        message = new MarkupString("The exported report is saved to a file: <br />" + _exportFilePath);
+    }
+
+    private void ExportReportAsPDF()
+    {
+        //Create empty report object
+        var report = new StiReport();
+
+        //Load report template
+        report.Load($"Reports/TwoSimpleLists.mrt");
+
+        //Render, w/out showing progress
+        report.Render(false);
+
+        //Export to pdf file
+        var _exportFilePath = $"Reports/TwoSimpleLists_{DateTime.Now.ToString("yyyy-dd-MM_HH-mm-ss")}.pdf";
+        report.ExportDocument(Stimulsoft.Report.StiExportFormat.Pdf, _exportFilePath);
+
+        message = new MarkupString("The exported report is saved to a file: <br />" + _exportFilePath);
+    }
+}

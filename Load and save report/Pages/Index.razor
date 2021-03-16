@@ -1,0 +1,80 @@
+﻿@page "/"
+@using Stimulsoft.Base
+@using Stimulsoft.Report
+
+<div align="center">
+    <button class="alert" @onclick="LoadReport">Load MRT template</button>
+    <br /><br />
+    <button class="alert" @onclick="SaveReport">Save MRT template to JSON</button>
+    <br /><br />
+    <button class="alert" @onclick="RenderReport">Render report</button>
+    <br /><br />
+    <button class="alert" @onclick="SaveDocument">Save MDC document to JSON</button>
+    <br /><br /><br />
+</div>
+
+<div align="center">
+    @($"Report template has {pagesTemplateCount} page(s)")
+    <br />
+    @($"Rendered report has {pagesDocumentCount} page(s)")
+</div>
+
+<br /><br />
+
+<!--Show report template JSON string here.-->
+<div align="left">
+    <p>@(reportJSON.Length > 0 ? "Here's your report:" : "")</p>
+    <p>@reportJSON</p>
+</div>
+
+@code
+{
+    private StiReport report = new StiReport();
+    private int pagesTemplateCount;
+    private int pagesDocumentCount;
+    private string reportJSON = "";
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //Init base font
+        StiFontCollection.AddFontFile($"Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
+    }
+
+    private void LoadReport()
+    {
+        //Create empty report object
+        report = new StiReport();
+
+        //Load report template
+        report.Load($"Reports/TwoSimpleLists.mrt");
+
+        //Render report
+        report.Render(false);
+
+        //Show number of pages as proof that it works
+        pagesTemplateCount = report.Pages.Count;
+    }
+
+    private void SaveReport()
+    {
+        //Save report template to JSON string
+        reportJSON = report.SaveToJsonString();
+    }
+
+    private void RenderReport()
+    {
+        //Render report
+        report.Render(false);
+
+        //Show number of pages as proof that it works
+        pagesDocumentCount = report.RenderedPages.Count;
+    }
+
+    private void SaveDocument()
+    {
+        //Save rendered report to JSON string
+        reportJSON = report.SaveDocumentJsonToString();
+    }
+}
