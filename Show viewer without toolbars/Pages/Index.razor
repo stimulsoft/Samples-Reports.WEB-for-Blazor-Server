@@ -5,12 +5,12 @@
 @using Stimulsoft.Report.Web
 
 <!--Report viewer-->
-<StiBlazorViewer Report="@reportObject" Options="@options" />
+<StiBlazorViewer Report="@report" Options="@options" />
 
 @code
 {
     //Report object to use in viewer
-    private StiReport reportObject;
+    private StiReport report;
 
     //Options object
     private StiBlazorViewerOptions options;
@@ -35,9 +35,9 @@
         options.Appearance.FullScreenMode = true;
 
         //Create empty report object
-        reportObject = new Stimulsoft.Report.StiReport();
+        report = new StiReport();
 
         //Load report template
-        reportObject.Load($"Reports/TwoSimpleLists.mrt");
+        report.Load($"Reports/TwoSimpleLists.mrt");
     }
 }

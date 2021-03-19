@@ -5,12 +5,12 @@
 @using Stimulsoft.Report.Web
 
 <!--Report designer-->
-<StiBlazorDesigner Report="@reportObject" OnSaveReport="@SaveReport" />
+<StiBlazorDesigner Report="@report" OnSaveReport="@SaveReport" />
 
 @code
 {
     //Report object to use in viewer
-    private StiReport reportObject;
+    private StiReport report;
 
     protected override void OnInitialized()
     {
@@ -20,10 +20,10 @@
         StiFontCollection.AddFontFile($"Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
 
         //Create empty report object
-        reportObject = new StiReport();
+        report = new StiReport();
 
         //Load report template
-        reportObject.Load($"Reports/TwoSimpleLists.mrt");
+        report.Load($"Reports/TwoSimpleLists.mrt");
     }
 
     private void SaveReport(StiSaveReportEventArgs args)

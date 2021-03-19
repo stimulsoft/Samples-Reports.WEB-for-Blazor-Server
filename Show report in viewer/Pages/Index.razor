@@ -4,12 +4,12 @@
 @using Stimulsoft.Report.Blazor
 
 <!--Report viewer-->
-<StiBlazorViewer Report="@reportObject" />
+<StiBlazorViewer Report="@report" />
 
 @code
 {
     //Report object to use in viewer
-    private StiReport reportObject;
+    private StiReport report;
 
     protected override void OnInitialized()
     {
@@ -24,9 +24,9 @@
         StiFontCollection.AddFontFile($"Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
 
         //Create empty report object
-        reportObject = new StiReport();
+        report = new StiReport();
 
         //Load report template
-        reportObject.Load($"Reports/TwoSimpleLists.mrt");
+        report.Load($"Reports/TwoSimpleLists.mrt");
     }
 }

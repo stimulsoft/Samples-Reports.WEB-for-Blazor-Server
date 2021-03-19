@@ -5,12 +5,12 @@
 @using Stimulsoft.Report.Web
 
 <!--Report Viewer-->
-<StiBlazorViewer Report="@reportObject" Options="@options" Width="650" Height="650" />
+<StiBlazorViewer Report="@report" Options="@options" Width="650" Height="650" />
 
 @code
 {
     //Report object to use in viewer
-    private StiReport reportObject;
+    private StiReport report;
 
     //Options object
     private StiBlazorViewerOptions options;
@@ -33,9 +33,9 @@
         options.Theme = StiViewerTheme.Office2013WhiteCarmine;
 
         //Create empty report object
-        reportObject = new StiReport();
+        report = new StiReport();
 
         //Load report template
-        reportObject.Load($"Reports/TwoSimpleLists.mrt");
+        report.Load($"Reports/TwoSimpleLists.mrt");
     }
 }
