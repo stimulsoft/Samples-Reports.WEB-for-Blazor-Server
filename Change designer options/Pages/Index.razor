@@ -17,15 +17,15 @@
 
     protected override void OnInitialized()
     {
+        base.OnInitialized();
+
         //How to activate
         //Stimulsoft.Base.StiLicense.Key = "6vJhGtLLLz2GNviWmUTrhSqnO...";
         //Stimulsoft.Base.StiLicense.LoadFromFile("license.key");
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
 
-        base.OnInitialized();
-
         //Init base font
-        StiFontCollection.AddFontFile($"Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
+        StiFontCollection.AddFontFile("Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
 
         //Init options object
         options = new StiBlazorDesignerOptions();
@@ -42,6 +42,6 @@
         report = new StiReport();
 
         //Load report template
-        report.Load($"Reports/TwoSimpleLists.mrt");
+        report.Load("Reports/TwoSimpleLists.mrt");
     }
 }

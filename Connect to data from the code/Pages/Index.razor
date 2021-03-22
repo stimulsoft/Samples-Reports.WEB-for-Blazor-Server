@@ -17,21 +17,21 @@
 
     protected override void OnInitialized()
     {
+        base.OnInitialized();
+
         //How to activate
         //Stimulsoft.Base.StiLicense.Key = "6vJhGtLLLz2GNviWmUTrhSqnO...";
         //Stimulsoft.Base.StiLicense.LoadFromFile("license.key");
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
 
-        base.OnInitialized();
-
         //Init base font
-        StiFontCollection.AddFontFile($"Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
+        StiFontCollection.AddFontFile("Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
 
         //Create empty report object
         report = new StiReport();
 
         //Load report template
-        report.Load($"Reports/Report.mrt");
+        report.Load("Reports/Report.mrt");
     }
 
     private void SetFirstDataSet()
@@ -41,7 +41,7 @@
 
         //Load new data from XML file
         var data = new System.Data.DataSet();
-        data.ReadXml($"Data/Demo1.xml");
+        data.ReadXml("Data/Demo1.xml");
 
         //Register new data in the report template
         report.RegData(data);
@@ -61,7 +61,7 @@
 
         //Load new data from XML file
         var data = new System.Data.DataSet();
-        data.ReadXml($"Data/Demo2.xml");
+        data.ReadXml("Data/Demo2.xml");
 
         //Register new data in the report
         report.RegData(data);
