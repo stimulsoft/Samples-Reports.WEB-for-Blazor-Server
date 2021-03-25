@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Localizing_the_viewer
+namespace Using_business_objects_in_the_report
 {
     public class Startup
     {

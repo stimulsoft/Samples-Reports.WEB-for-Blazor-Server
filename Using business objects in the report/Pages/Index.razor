@@ -1,0 +1,68 @@
+﻿@page "/"
+@using Stimulsoft.Base
+@using Stimulsoft.Report
+@using Stimulsoft.Report.Blazor
+@using Stimulsoft.Report.Web
+
+<!--Report designer-->
+<StiBlazorDesigner Report="@report" OnSaveReport="@SaveReport" />
+
+@code
+{
+    //Report object to use in designer
+    private StiReport report;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //How to activate
+        //Stimulsoft.Base.StiLicense.Key = "6vJhGtLLLz2GNviWmUTrhSqnO...";
+        //Stimulsoft.Base.StiLicense.LoadFromFile("license.key");
+        //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
+
+        //Init base font
+        StiFontCollection.AddFontFile("Fonts/Microsoft Sans Serif.ttf", "Segoe UI");
+
+        //Create empty report object
+        report = new StiReport();
+
+        //Create business object
+        var list = GetBusinessObject();
+
+        //Register business object in the report template
+        report.RegBusinessObject("MyList", list);
+        report.Dictionary.Synchronize();
+    }
+
+    private void SaveReport(StiSaveReportEventArgs args)
+    {
+        var jsonReport = args.Report.SaveToJsonString();
+    }
+
+
+    //Business objects
+
+    public class BusinessEntity
+    {
+        public string Name { get; set; }
+
+        public string Alias { get; set; }
+
+        public BusinessEntity(string name, string alias)
+        {
+            Name = name;
+            Alias = alias;
+        }
+    }
+
+    private System.Collections.ArrayList GetBusinessObject()
+    {
+        var list = new System.Collections.ArrayList();
+        list.Add(new BusinessEntity("name1", "alias1"));
+        list.Add(new BusinessEntity("name2", "alias2"));
+        list.Add(new BusinessEntity("name3", "alias3"));
+
+        return list;
+    }
+}
