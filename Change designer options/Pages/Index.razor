@@ -5,7 +5,7 @@
 @using Stimulsoft.Report.Web
 
 <!--Report Designer-->
-<StiBlazorDesigner Report="@report" Options="@options"></StiBlazorDesigner>
+<StiBlazorDesigner Report="@report" Options="@options" Theme="StiDesignerTheme.Office2013LightGrayCarmine"></StiBlazorDesigner>
 
 @code
 {
@@ -36,7 +36,6 @@
         options.Toolbar.ShowLayoutButton = false;
         options.Appearance.ShowTooltips = false;
         options.Appearance.ShowDialogsHelp = false;
-        options.Theme = StiDesignerTheme.Office2013LightGrayCarmine;
 
         //Create empty report object
         report = new StiReport();

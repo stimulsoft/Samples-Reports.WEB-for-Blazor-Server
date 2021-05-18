@@ -5,7 +5,9 @@
 @using Stimulsoft.Report.Web
 
 <!--Report Viewer-->
-<StiBlazorViewer Report="@report" Options="@options" Width="650" Height="650" />
+<StiBlazorViewer Report="@report" Options="@options" 
+                 Width="650" Height="650" 
+                 Theme="StiViewerTheme.Office2013WhiteCarmine" />
 
 @code
 {
@@ -35,7 +37,6 @@
         options.Appearance.ScrollbarsMode = true;
         options.Toolbar.ShowOpenButton = false;
         options.Toolbar.DisplayMode = StiToolbarDisplayMode.Separated;
-        options.Theme = StiViewerTheme.Office2013WhiteCarmine;
 
         //Create empty report object
         report = new StiReport();

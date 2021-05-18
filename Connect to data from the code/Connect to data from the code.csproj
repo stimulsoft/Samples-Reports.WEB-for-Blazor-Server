@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Stimulsoft.Reports.Blazor" Version="2021.2.1" />
+    <PackageReference Include="Stimulsoft.Reports.Blazor" Version="2021.3.1" />
   </ItemGroup>
 
 </Project>

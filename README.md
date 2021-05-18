@@ -4,9 +4,11 @@
 
 # Overview
 This repository has some examples (Visual Studio Projects) each in different folders:
+* Add a custom button to the viewer toolbar
 * Change designer options
 * Change viewer options
 * Connect to data from the code
+* Custom data adapter
 * Edit report template in designer
 * Export report from code
 * Load and save report

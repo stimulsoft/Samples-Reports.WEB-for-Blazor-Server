@@ -23,7 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Show viewer without toolbar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Localizing the viewer", "Localizing the viewer\Localizing the viewer.csproj", "{7D733B60-77F5-487A-B65C-4008C1D38838}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Using business objects in the report", "Using business objects in the report\Using business objects in the report.csproj", "{57807115-5C04-4A26-AE7E-FF31AA059442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Using business objects in the report", "Using business objects in the report\Using business objects in the report.csproj", "{57807115-5C04-4A26-AE7E-FF31AA059442}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Add a custom button to the viewer toolbar", "Add a custom button to the viewer toolbar\Add a custom button to the viewer toolbar.csproj", "{55AE31C7-6E84-49B5-87C8-19633F86E735}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Custom data adapter", "Custom data adapter\Custom data adapter.csproj", "{A48FDB26-9FBC-4917-A327-9BE66BB517D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{57807115-5C04-4A26-AE7E-FF31AA059442}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57807115-5C04-4A26-AE7E-FF31AA059442}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57807115-5C04-4A26-AE7E-FF31AA059442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55AE31C7-6E84-49B5-87C8-19633F86E735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55AE31C7-6E84-49B5-87C8-19633F86E735}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55AE31C7-6E84-49B5-87C8-19633F86E735}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55AE31C7-6E84-49B5-87C8-19633F86E735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A48FDB26-9FBC-4917-A327-9BE66BB517D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A48FDB26-9FBC-4917-A327-9BE66BB517D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A48FDB26-9FBC-4917-A327-9BE66BB517D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A48FDB26-9FBC-4917-A327-9BE66BB517D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

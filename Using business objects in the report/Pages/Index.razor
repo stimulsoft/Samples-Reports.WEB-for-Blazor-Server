@@ -27,6 +27,9 @@
         //Create empty report object
         report = new StiReport();
 
+        //Load report template
+        report.Load("Reports/BusinessObjects.mrt");
+
         //Create business object
         var list = GetBusinessObject();
 
