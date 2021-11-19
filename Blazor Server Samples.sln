@@ -3,31 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Load and save report", "Load and save report\Load and save report.csproj", "{F83B927D-D624-4E63-A2D0-2BBC0214B300}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loading and Saving a Report Template", "Loading and Saving a Report Template\Loading and Saving a Report Template.csproj", "{F83B927D-D624-4E63-A2D0-2BBC0214B300}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Show report in viewer", "Show report in viewer\Show report in viewer.csproj", "{4209DE12-17D3-4DBC-A06E-C0B514B4CFDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Showing a Report in the Viewer", "Showing a Report in the Viewer\Showing a Report in the Viewer.csproj", "{4209DE12-17D3-4DBC-A06E-C0B514B4CFDD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Export report from code", "Export report from code\Export report from code.csproj", "{D0BB3D3C-C96E-4C87-9FD3-9F5F1A0333F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exporting a Report from Code", "Exporting a Report from Code\Exporting a Report from Code.csproj", "{D0BB3D3C-C96E-4C87-9FD3-9F5F1A0333F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Connect to data from the code", "Connect to data from the code\Connect to data from the code.csproj", "{BFE66E49-EEE0-4B9F-AE29-E07FAB4F2078}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Connecting to Data from Code", "Connecting to Data from Code\Connecting to Data from Code.csproj", "{BFE66E49-EEE0-4B9F-AE29-E07FAB4F2078}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Set variable value from code", "Set variable value from code\Set variable value from code.csproj", "{B50A021E-1AC7-4E0C-966D-DF35FB1B4DD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Using Report Variables in Code", "Using Report Variables in Code\Using Report Variables in Code.csproj", "{B50A021E-1AC7-4E0C-966D-DF35FB1B4DD8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edit report template in designer", "Edit report template in designer\Edit report template in designer.csproj", "{5A57AFDF-2012-43A2-938B-49A32063CFF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Editing a Report Template in the Designer", "Editing a Report Template in the Designer\Editing a Report Template in the Designer.csproj", "{5A57AFDF-2012-43A2-938B-49A32063CFF0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Change viewer options", "Change viewer options\Change viewer options.csproj", "{619C90BF-F003-4CA6-A949-DD76FBFE0AC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Changing the Viewer Options", "Changing the Viewer Options\Changing the Viewer Options.csproj", "{619C90BF-F003-4CA6-A949-DD76FBFE0AC5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Change designer options", "Change designer options\Change designer options.csproj", "{395D779E-78A8-408F-A8B3-D842D7B2F4A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Changing the Designer Options", "Changing the Designer Options\Changing the Designer Options.csproj", "{395D779E-78A8-408F-A8B3-D842D7B2F4A2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Show viewer without toolbars", "Show viewer without toolbars\Show viewer without toolbars.csproj", "{E9AB2357-1ABA-4E3A-8BDC-F1F4F4C177AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Showing a Viewer without Toolbar", "Showing a Viewer without Toolbar\Showing a Viewer without Toolbar.csproj", "{E9AB2357-1ABA-4E3A-8BDC-F1F4F4C177AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Localizing the viewer", "Localizing the viewer\Localizing the viewer.csproj", "{7D733B60-77F5-487A-B65C-4008C1D38838}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Localizing the Viewer", "Localizing the viewer\Localizing the viewer.csproj", "{7D733B60-77F5-487A-B65C-4008C1D38838}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Using business objects in the report", "Using business objects in the report\Using business objects in the report.csproj", "{57807115-5C04-4A26-AE7E-FF31AA059442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Using Business Objects in the Report", "Using Business Objects in the Report\Using Business Objects in the Report.csproj", "{57807115-5C04-4A26-AE7E-FF31AA059442}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Add a custom button to the viewer toolbar", "Add a custom button to the viewer toolbar\Add a custom button to the viewer toolbar.csproj", "{55AE31C7-6E84-49B5-87C8-19633F86E735}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creating a Custom Button on the Viewer Toolbar", "Creating a Custom Button on the Viewer Toolbar\Creating a Custom Button on the Viewer Toolbar.csproj", "{55AE31C7-6E84-49B5-87C8-19633F86E735}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Custom data adapter", "Custom data adapter\Custom data adapter.csproj", "{A48FDB26-9FBC-4917-A327-9BE66BB517D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Using a Custom Data Adapter", "Using a Custom Data Adapter\Using a Custom Data Adapter.csproj", "{A48FDB26-9FBC-4917-A327-9BE66BB517D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

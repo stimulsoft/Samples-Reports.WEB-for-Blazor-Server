@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Using_business_objects_in_the_report</RootNamespace>
+    <RootNamespace>Using_Business_Objects_in_the_Report</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Stimulsoft.Reports.Blazor" Version="2021.4.3" />
