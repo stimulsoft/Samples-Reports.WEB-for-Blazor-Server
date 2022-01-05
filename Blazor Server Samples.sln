@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Using Business Objects in t
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creating a Custom Button on the Viewer Toolbar", "Creating a Custom Button on the Viewer Toolbar\Creating a Custom Button on the Viewer Toolbar.csproj", "{55AE31C7-6E84-49B5-87C8-19633F86E735}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Using a Custom Data Adapter", "Using a Custom Data Adapter\Using a Custom Data Adapter.csproj", "{A48FDB26-9FBC-4917-A327-9BE66BB517D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Using User Data in Reports", "Using User Data in Reports\Using User Data in Reports.csproj", "{A48FDB26-9FBC-4917-A327-9BE66BB517D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

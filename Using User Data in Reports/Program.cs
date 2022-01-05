@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Using_a_Custom_Data_Adapter
+namespace Using_User_Data_in_Reports
 {
     public class Program
     {
