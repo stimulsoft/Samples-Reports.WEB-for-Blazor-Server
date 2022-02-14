@@ -22,7 +22,7 @@
     <Resources isList="true" count="0" />
     <Variables isList="true" count="0" />
   </Dictionary>
-  <EngineVersion>EngineV1</EngineVersion>
+  <EngineVersion>EngineV2</EngineVersion>
   <GlobalizationStrings isList="true" count="0" />
   <Key>1ee3b5fec5004af1943d2f336347ddfd</Key>
   <MetaTags isList="true" count="0" />
@@ -228,14 +228,14 @@
   </ReferencedAssemblies>
   <ReportAlias>User Data</ReportAlias>
   <ReportAuthor isNull="true" />
-  <ReportChanged>5/6/2021 2:21:05 PM</ReportChanged>
+  <ReportChanged>2/14/2022 4:46:19 PM</ReportChanged>
   <ReportCreated>5/29/2004 10:59:00 AM</ReportCreated>
   <ReportDescription isNull="true" />
-  <ReportFile>D:\Samples\000\Samples-Blazor-Server\Custom data adapter\Reports\UserData.mrt</ReportFile>
-  <ReportGuid>2ad7f47e2be04cdcbc2bda327a9ce9cb</ReportGuid>
+  <ReportFile>D:\Stimulsoft\Samples\Samples-Blazor-Server\Using User Data in Reports\Reports\UserData.mrt</ReportFile>
+  <ReportGuid>585c92e02efe4471a4a41bc45e2091e0</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
-  <ReportVersion>2021.3.1.0</ReportVersion>
+  <ReportVersion>2022.1.6.0</ReportVersion>
   <Script>using System;
 using System.Drawing;
 using System.Windows.Forms;
