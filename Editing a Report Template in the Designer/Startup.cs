@@ -21,6 +21,12 @@ namespace Editing_a_Report_Template_in_the_Designer
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+
+            // Setting the maximum message size of a single incoming hub message.
+            services.AddSignalR(hubOptions =>
+            {
+                hubOptions.MaximumReceiveMessageSize = 10 * 1024 * 1024; // 10MB
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
