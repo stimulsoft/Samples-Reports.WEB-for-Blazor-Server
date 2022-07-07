@@ -29,9 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creating a Custom Button on
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Using User Data in Reports", "Using User Data in Reports\Using User Data in Reports.csproj", "{A48FDB26-9FBC-4917-A327-9BE66BB517D4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adding Custom Function from Referenced Assembly", "Adding Custom Function from Referenced Assembly\Adding Custom Function from Referenced Assembly.csproj", "{F6CE0A67-031C-488D-859F-EC729BBE7AB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adding a Custom Function to the Designer", "Adding a Custom Function to the Designer\Adding a Custom Function to the Designer.csproj", "{F6CE0A67-031C-488D-859F-EC729BBE7AB5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomFunctionsLibrary", "Adding Custom Function from Referenced Assembly\CustomFunctionsLibrary\CustomFunctionsLibrary.csproj", "{234D7CF4-1BC1-4B42-B779-1FB2DF75264D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomFunctionsLibrary", "Adding a Custom Function to the Designer\CustomFunctionsLibrary\CustomFunctionsLibrary.csproj", "{234D7CF4-1BC1-4B42-B779-1FB2DF75264D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

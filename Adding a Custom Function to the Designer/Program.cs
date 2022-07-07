@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Adding_Custom_Function_from_Referenced_Assembly
+namespace Adding_a_Custom_Function_to_the_Designer
 {
     public class Program
     {
