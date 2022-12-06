@@ -4,15 +4,15 @@
 @using Stimulsoft.Report.Blazor
 @using Stimulsoft.Report.Web
 @using Stimulsoft.Report.Dictionary
-@using CustomFunctionsLibrary
+@using Functions
 
 <!--Report Designer-->
-<StiBlazorDesigner Report="@report" Theme="StiDesignerTheme.Office2013LightGrayCarmine"></StiBlazorDesigner>
+<StiBlazorDesigner Report="@Report" Theme="StiDesignerTheme.Office2013LightGrayCarmine"></StiBlazorDesigner>
 
 @code
 {
     //Report object to use in designer
-    private StiReport report;
+    private StiReport Report;
 
     protected override void OnInitialized()
     {
@@ -32,9 +32,12 @@
             new[] { "A set of values" }).UseFullPath = false;
 
         //Create empty report object
-        report = new StiReport();
+        var report = new StiReport();
 
         //Load report template
         report.Load("Reports/CustomFunction.mrt");
+
+        //Assign a report to the Designer
+        this.Report = report;
     }
 }

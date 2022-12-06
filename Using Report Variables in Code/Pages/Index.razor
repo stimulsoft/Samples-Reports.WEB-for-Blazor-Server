@@ -4,20 +4,20 @@
 @using Stimulsoft.Report.Blazor
 
 <div align="center">
-    <input type="text" @bind="newValueInput" />
-    <button class="alert" @onclick="SetVariable">Set variable</button>
+    <input type="text" @bind="@NewValueInput" />
+    <button class="alert" @onclick="@SetVariable">Set variable</button>
 </div>
 
 <br />
 
 <div align="center">
-    <StiBlazorViewer Report="@report" />
+    <StiBlazorViewer Report="@Report" />
 </div>
 
 @code
 {
-    private StiReport report;
-    private string newValueInput;
+    private StiReport Report;
+    private string NewValueInput;
 
     protected override void OnInitialized()
     {
@@ -29,18 +29,26 @@
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
 
         //Create empty report object
-        report = new StiReport();
+        var report = new StiReport();
 
-        //Load report template
+        //Load a report template
         report.Load("Reports/ReportWithVariable.mrt");
+
+        //Assign a report to the Viewer
+        this.Report = report;
     }
 
     private void SetVariable()
     {
-        //Set new value
-        report["MySuperUselessVariable"] = newValueInput;
+        var report = this.Report.Clone() as StiReport;
 
-        //Update view
+        //Set new value
+        report["MySuperUselessVariable"] = NewValueInput;
+
+        //Render report with new value
         report.Render();
+
+        //Assign new report to the Viewer
+        this.Report = report;
     }
 }
