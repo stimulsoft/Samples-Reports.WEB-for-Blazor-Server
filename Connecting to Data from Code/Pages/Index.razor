@@ -9,11 +9,11 @@
 </div>
 <br />
 
-<StiBlazorViewer Report="@report" />
+<StiBlazorViewer Report="@Report" />
 
 @code
 {
-    private StiReport report;
+    private StiReport Report;
 
     protected override void OnInitialized()
     {
@@ -25,14 +25,20 @@
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
 
         //Create empty report object
-        report = new StiReport();
+        var report = new StiReport();
 
         //Load report template
         report.Load("Reports/Report.mrt");
+
+        //Assign a report to the Viewer
+        this.Report = report;
     }
 
     private void SetFirstDataSet()
     {
+        //Get a report copy
+        var report = this.Report.Clone() as StiReport;
+
         //Delete connections in the report template
         report.Dictionary.Databases.Clear();
 
@@ -49,10 +55,16 @@
 
         //Re-render report
         report.Render();
+
+        //Assign new report to the Viewer
+        this.Report = report;
     }
 
     private void SetSecondDataSet()
     {
+        //Get a report copy
+        var report = this.Report.Clone() as StiReport;
+
         //Delete connections in the report template
         report.Dictionary.Databases.Clear();
 
@@ -69,5 +81,8 @@
 
         //Re-render report
         report.Render();
+
+        //Assign new report to the Viewer
+        this.Report = report;
     }
 }
