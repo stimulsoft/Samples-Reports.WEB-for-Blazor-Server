@@ -25,18 +25,15 @@
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
 
         //Create empty report object
-        var report = new StiReport();
+        this.Report = new StiReport();
 
         //Load report template
-        report.Load("Reports/Report.mrt");
-
-        //Assign a report to the Viewer
-        this.Report = report;
+        this.Report.Load("Reports/Report.mrt");
     }
 
     private void SetFirstDataSet()
     {
-        //Get a report copy
+        //Get a copy of the report into a new report object
         var report = this.Report.Clone() as StiReport;
 
         //Delete connections in the report template
@@ -62,7 +59,7 @@
 
     private void SetSecondDataSet()
     {
-        //Get a report copy
+        //Get a copy of the report into a new report object
         var report = this.Report.Clone() as StiReport;
 
         //Delete connections in the report template

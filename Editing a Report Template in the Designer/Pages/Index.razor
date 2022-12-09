@@ -4,13 +4,13 @@
 @using Stimulsoft.Report.Blazor
 @using Stimulsoft.Report.Web
 
-<!--Report designer-->
-<StiBlazorDesigner Report="@report" OnSaveReport="@SaveReport" />
+<!--Report Designer-->
+<StiBlazorDesigner Report="@Report" OnSaveReport="@OnSaveReport" />
 
 @code
 {
-    //Report object to use in designer
-    private StiReport report;
+    //Report object to use in Designer
+    private StiReport Report;
 
     protected override void OnInitialized()
     {
@@ -22,13 +22,13 @@
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
 
         //Create empty report object
-        report = new StiReport();
+        this.Report = new StiReport();
 
         //Load report template
-        report.Load("Reports/TwoSimpleLists.mrt");
+        this.Report.Load("Reports/TwoSimpleLists.mrt");
     }
 
-    private void SaveReport(StiSaveReportEventArgs args)
+    private void OnSaveReport(StiSaveReportEventArgs args)
     {
         args.Report.Save("Reports/TwoSimpleLists.mrt");
     }

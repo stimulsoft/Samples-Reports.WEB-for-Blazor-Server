@@ -29,7 +29,9 @@
 
 @code
 {
-    private StiReport report = new StiReport();
+    //Report for processing
+    private StiReport Report;
+
     private int pagesTemplateCount;
     private int pagesDocumentCount;
     private string reportJSON = "";
@@ -42,41 +44,41 @@
         //Stimulsoft.Base.StiLicense.Key = "6vJhGtLLLz2GNviWmUTrhSqnO...";
         //Stimulsoft.Base.StiLicense.LoadFromFile("license.key");
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
+
+        //Create empty report object
+        this.Report = new StiReport();
     }
 
     private void LoadReport()
     {
-        //Create empty report object
-        report = new StiReport();
-
         //Load report template
-        report.Load("Reports/TwoSimpleLists.mrt");
+        this.Report.Load("Reports/TwoSimpleLists.mrt");
 
         //Render report
-        report.Render(false);
+        this.Report.Render(false);
 
         //Show number of pages as proof that it works
-        pagesTemplateCount = report.Pages.Count;
+        pagesTemplateCount = this.Report.Pages.Count;
     }
 
     private void SaveReport()
     {
         //Save report template to JSON string
-        reportJSON = report.SaveToJsonString();
+        reportJSON = this.Report.SaveToJsonString();
     }
 
     private void RenderReport()
     {
         //Render report
-        report.Render(false);
+        this.Report.Render(false);
 
         //Show number of pages as proof that it works
-        pagesDocumentCount = report.RenderedPages.Count;
+        pagesDocumentCount = this.Report.RenderedPages.Count;
     }
 
     private void SaveDocument()
     {
         //Save rendered report to JSON string
-        reportJSON = report.SaveDocumentJsonToString();
+        reportJSON = this.Report.SaveDocumentJsonToString();
     }
 }

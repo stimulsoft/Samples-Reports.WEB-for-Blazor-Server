@@ -3,12 +3,12 @@
 @using Stimulsoft.Report
 @using Stimulsoft.Report.Blazor
 
-<!--Report viewer-->
-<StiBlazorViewer Report="@report" Localization="Localization/pl.xml" />
+<!--Report Viewer-->
+<StiBlazorViewer Report="@Report" Localization="Localization/pl.xml" />
 
 @code
 {
-    private StiReport report;
+    private StiReport Report;
 
     protected override void OnInitialized()
     {
@@ -20,9 +20,9 @@
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
 
         //Create empty report object
-        report = new StiReport();
+        this.Report = new StiReport();
 
         //Load report template
-        report.Load("Reports/TwoSimpleLists.mrt");
+        this.Report.Load("Reports/TwoSimpleLists.mrt");
     }
 }

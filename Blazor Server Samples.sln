@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Changing the Designer Optio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Showing a Viewer without Toolbar", "Showing a Viewer without Toolbar\Showing a Viewer without Toolbar.csproj", "{E9AB2357-1ABA-4E3A-8BDC-F1F4F4C177AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Localizing the viewer", "Localizing the viewer\Localizing the viewer.csproj", "{7D733B60-77F5-487A-B65C-4008C1D38838}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Localizing the Viewer", "Localizing the Viewer\Localizing the Viewer.csproj", "{7D733B60-77F5-487A-B65C-4008C1D38838}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Using Business Objects in the Report", "Using Business Objects in the Report\Using Business Objects in the Report.csproj", "{57807115-5C04-4A26-AE7E-FF31AA059442}"
 EndProject

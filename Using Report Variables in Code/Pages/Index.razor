@@ -29,17 +29,15 @@
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
 
         //Create empty report object
-        var report = new StiReport();
+        this.Report = new StiReport();
 
         //Load a report template
-        report.Load("Reports/ReportWithVariable.mrt");
-
-        //Assign a report to the Viewer
-        this.Report = report;
+        this.Report.Load("Reports/ReportWithVariable.mrt");
     }
 
     private void SetVariable()
     {
+        //Get a copy of the report into a new report object
         var report = this.Report.Clone() as StiReport;
 
         //Set new value

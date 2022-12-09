@@ -5,15 +5,15 @@
 @using Stimulsoft.Report.Web
 
 <!--Report Designer-->
-<StiBlazorDesigner Report="@report" Options="@options" Theme="StiDesignerTheme.Office2013LightGrayCarmine"></StiBlazorDesigner>
+<StiBlazorDesigner Report="@Report" Options="@Options" Theme="StiDesignerTheme.Office2013LightGrayCarmine" />
 
 @code
 {
-    //Report object to use in designer
-    private StiReport report;
+    //Report object to use in Designer
+    private StiReport Report;
 
-    //Options object
-    private StiBlazorDesignerOptions options;
+    //Designer options object
+    private StiBlazorDesignerOptions Options;
 
     protected override void OnInitialized()
     {
@@ -25,19 +25,19 @@
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
 
         //Init options object
-        options = new StiBlazorDesignerOptions();
+        this.Options = new StiBlazorDesignerOptions();
 
         //Set some options
-        options.Toolbar.ShowPageButton = false;
-        options.Toolbar.ShowInsertButton = false;
-        options.Toolbar.ShowLayoutButton = false;
-        options.Appearance.ShowTooltips = false;
-        options.Appearance.ShowDialogsHelp = false;
+        this.Options.Toolbar.ShowPageButton = false;
+        this.Options.Toolbar.ShowInsertButton = false;
+        this.Options.Toolbar.ShowLayoutButton = false;
+        this.Options.Appearance.ShowTooltips = false;
+        this.Options.Appearance.ShowDialogsHelp = false;
 
         //Create empty report object
-        report = new StiReport();
+        this.Report = new StiReport();
 
         //Load report template
-        report.Load("Reports/TwoSimpleLists.mrt");
+        this.Report.Load("Reports/TwoSimpleLists.mrt");
     }
 }

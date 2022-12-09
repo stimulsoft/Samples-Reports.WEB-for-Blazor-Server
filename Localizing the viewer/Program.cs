@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Localizing_the_viewer
+namespace Localizing_the_Viewer
 {
     public class Program
     {

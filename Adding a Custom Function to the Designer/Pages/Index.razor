@@ -7,11 +7,11 @@
 @using Functions
 
 <!--Report Designer-->
-<StiBlazorDesigner Report="@Report" Theme="StiDesignerTheme.Office2013LightGrayCarmine"></StiBlazorDesigner>
+<StiBlazorDesigner Report="@Report" Theme="StiDesignerTheme.Office2013LightGrayCarmine" />
 
 @code
 {
-    //Report object to use in designer
+    //Report object to use in Designer
     private StiReport Report;
 
     protected override void OnInitialized()
@@ -32,12 +32,9 @@
             new[] { "A set of values" }).UseFullPath = false;
 
         //Create empty report object
-        var report = new StiReport();
+        this.Report = new StiReport();
 
         //Load report template
-        report.Load("Reports/CustomFunction.mrt");
-
-        //Assign a report to the Designer
-        this.Report = report;
+        this.Report.Load("Reports/CustomFunction.mrt");
     }
 }

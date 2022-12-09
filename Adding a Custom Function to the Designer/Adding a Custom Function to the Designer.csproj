@@ -1,12 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <DefaultItemExcludes>$(DefaultItemExcludes);CustomFunctionsLibrary\**</DefaultItemExcludes>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Stimulsoft.Reports.Blazor" Version="2023.1.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Functions\" />
   </ItemGroup>
 </Project>

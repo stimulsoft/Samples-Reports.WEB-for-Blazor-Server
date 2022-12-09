@@ -4,13 +4,13 @@
 @using Stimulsoft.Report.Blazor
 @using Stimulsoft.Report.Web
 
-<!--Report designer-->
-<StiBlazorDesigner Report="@report" OnSaveReport="@SaveReport" />
+<!--Report Designer-->
+<StiBlazorDesigner Report="@Report" OnSaveReport="@OnSaveReport" />
 
 @code
 {
-    //Report object to use in designer
-    private StiReport report;
+    //Report object to use in Designer
+    private StiReport Report;
 
     protected override void OnInitialized()
     {
@@ -22,20 +22,20 @@
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
 
         //Create empty report object
-        report = new StiReport();
+        this.Report = new StiReport();
 
         //Load report template
-        report.Load("Reports/BusinessObjects.mrt");
+        this.Report.Load("Reports/BusinessObjects.mrt");
 
         //Create business object
         var list = GetBusinessObject();
 
         //Register business object in the report template
-        report.RegBusinessObject("MyList", list);
-        report.Dictionary.Synchronize();
+        this.Report.RegBusinessObject("MyList", list);
+        this.Report.Dictionary.Synchronize();
     }
 
-    private void SaveReport(StiSaveReportEventArgs args)
+    private void OnSaveReport(StiSaveReportEventArgs args)
     {
         var jsonReport = args.Report.SaveToJsonString();
     }

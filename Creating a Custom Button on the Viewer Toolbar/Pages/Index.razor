@@ -6,12 +6,12 @@
 @inject IJSRuntime JSRuntime
 
 <!--Report Viewer-->
-<StiBlazorViewer ID="WebViewer1" Report="@report" OnAfterRenderEvent="@OnAfterRenderEvent" />
+<StiBlazorViewer ID="WebViewer1" Report="@Report" OnAfterRenderEvent="@OnAfterRenderEvent" />
 
 @code
 {
-    //Report object to use in viewer
-    private StiReport report;
+    //Report object to use in Viewer
+    private StiReport Report;
 
     protected override void OnInitialized()
     {
@@ -20,13 +20,16 @@
         //Stimulsoft.Base.StiLicense.LoadFromFile("license.key");
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
 
-        //Create report object and load template
-        report = new StiReport();
-        report.Load("Reports/TwoSimpleLists.mrt");
+        //Create empty report object
+        this.Report = new StiReport();
+
+        //Load report template
+        this.Report.Load("Reports/TwoSimpleLists.mrt");
     }
 
     private void OnAfterRenderEvent()
     {
+        //Calling a JavaScript function from _Host.cshtml file
         JSRuntime.InvokeVoidAsync("createButton");
     }
 }

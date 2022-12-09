@@ -5,12 +5,12 @@
 @using Stimulsoft.Report.Web
 
 <!--Report Viewer-->
-<StiBlazorViewer Report="@report" />
+<StiBlazorViewer Report="@Report" />
 
 @code
 {
-    //Report object to use in viewer
-    private StiReport report;
+    //Report object to use in Viewer
+    private StiReport Report;
 
     protected override void OnInitialized()
     {
@@ -21,9 +21,11 @@
         //Stimulsoft.Base.StiLicense.LoadFromFile("license.key");
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
 
-        //Create report object and load template
-        report = new StiReport();
-        report.Load("Reports/UserData.mrt");
+        //Create empty report object
+        this.Report = new StiReport();
+
+        //Load a report template
+        this.Report.Load("Reports/UserData.mrt");
 
         //Create user data
         var stiUserData1 = new Stimulsoft.Report.Dictionary.StiUserData();
@@ -34,7 +36,7 @@
         stiUserData1.GetData += new Stimulsoft.Report.Dictionary.StiUserGetDataEventHandler(stiUserData1_GetData);
 
         //Register new data in the report template
-        report.RegData("UserData", stiUserData1);
+        this.Report.RegData("UserData", stiUserData1);
     }
 
 
