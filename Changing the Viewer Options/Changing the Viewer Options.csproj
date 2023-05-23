@@ -3,6 +3,6 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Stimulsoft.Reports.Blazor" Version="2023.2.4" />
+    <PackageReference Include="Stimulsoft.Reports.Blazor" Version="2023.2.5" />
   </ItemGroup>
 </Project>
