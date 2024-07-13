@@ -1,0 +1,35 @@
+﻿@page "/"
+@using Stimulsoft.Base
+@using Stimulsoft.Report
+@using Stimulsoft.Report.Blazor
+@using Stimulsoft.Report.Web
+@inject IJSRuntime JSRuntime
+
+<!--Report Viewer-->
+<StiBlazorViewer ID="WebViewer1" Report="@Report" OnViewerAfterRender="@OnViewerAfterRender" />
+
+@code
+{
+    //Report object to use in Viewer
+    private StiReport Report;
+
+    protected override void OnInitialized()
+    {
+        //How to activate
+        //Stimulsoft.Base.StiLicense.Key = "6vJhGtLLLz2GNviWmUTrhSqnO...";
+        //Stimulsoft.Base.StiLicense.LoadFromFile("license.key");
+        //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
+
+        //Create empty report object
+        this.Report = new StiReport();
+
+        //Load report template
+        this.Report.Load("Reports/TwoSimpleLists.mrt");
+    }
+
+    private void OnViewerAfterRender()
+    {
+        //Calling a JavaScript function from _Host.cshtml file
+        JSRuntime.InvokeVoidAsync("createButton");
+    }
+}

@@ -1,0 +1,90 @@
+﻿@page "/"
+@using Stimulsoft.Base
+@using Stimulsoft.Report
+@using Stimulsoft.Report.Web
+@using Stimulsoft.Report.Blazor
+@inject IJSRuntime JSRuntime 
+
+<div align="center">
+    <button @onclick="ExportReportAsHTML">Export as HTML</button> &nbsp; <button @onclick="ExportReportAsPDF">Export as PDF</button>
+    <br /><br />
+    <input id="responseAsFile" type="checkbox" @bind="responseAsFile"><label for="responseAsFile">Response as File</label>
+    <br /><br />
+    <p>@message</p>
+</div>
+
+@code
+{
+    private bool responseAsFile;
+
+    private MarkupString message;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //How to activate
+        //Stimulsoft.Base.StiLicense.Key = "6vJhGtLLLz2GNviWmUTrhSqnO...";
+        //Stimulsoft.Base.StiLicense.LoadFromFile("license.key");
+        //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
+
+        //Initialize JSRuntime service, only needed for response as file
+        StiBlazorHelper.Initialize(JSRuntime);
+    }
+
+    private void ExportReportAsHTML()
+    {
+        //Create empty report object
+        var report = new StiReport();
+
+        //Load report template
+        report.Load("Reports/TwoSimpleLists.mrt");
+
+        //Render, w/out showing progress
+        report.Render(false);
+
+        if (responseAsFile)
+        {
+            //Response as HMTL file
+            StiReportResponse.ResponseAsHtml(report);
+
+            message = new MarkupString("Export to HTML is completed.");
+        }
+        else
+        {
+            //Export to HTML file
+            var _exportFilePath = $"Reports/TwoSimpleLists_{DateTime.Now.ToString("yyyy-dd-MM_HH-mm-ss")}.html";
+            report.ExportDocument(Stimulsoft.Report.StiExportFormat.Html, _exportFilePath);
+
+            message = new MarkupString("The exported report is saved to a file: <br />" + _exportFilePath);
+        }
+    }
+
+    private void ExportReportAsPDF()
+    {
+        //Create empty report object
+        var report = new StiReport();
+
+        //Load report template
+        report.Load("Reports/TwoSimpleLists.mrt");
+
+        //Render, w/out showing progress
+        report.Render(false);
+
+        if (responseAsFile)
+        {
+            //Response as PDF file
+            StiReportResponse.ResponseAsPdf(report);
+
+            message = new MarkupString("Export to PDF is completed.");
+        }
+        else
+        {
+            //Export to PDF file
+            var _exportFilePath = $"Reports/TwoSimpleLists_{DateTime.Now.ToString("yyyy-dd-MM_HH-mm-ss")}.pdf";
+            report.ExportDocument(Stimulsoft.Report.StiExportFormat.Pdf, _exportFilePath);
+
+            message = new MarkupString("The exported report is saved to a file: <br />" + _exportFilePath);
+        }
+    }
+}

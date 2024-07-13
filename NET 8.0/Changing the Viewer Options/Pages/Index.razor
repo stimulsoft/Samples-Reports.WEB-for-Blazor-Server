@@ -1,0 +1,44 @@
+﻿@page "/"
+@using Stimulsoft.Base
+@using Stimulsoft.Report
+@using Stimulsoft.Report.Blazor
+@using Stimulsoft.Report.Web
+
+<!--Report Viewer-->
+<StiBlazorViewer Report="@Report" Options="@Options" 
+                 Width="650" Height="650" 
+                 Theme="StiViewerTheme.Office2022LightGrayCarmine" />
+
+@code
+{
+    //Report object to use in Viewer
+    private StiReport Report;
+
+    //Viewer options object
+    private StiBlazorViewerOptions Options;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //How to activate
+        //Stimulsoft.Base.StiLicense.Key = "6vJhGtLLLz2GNviWmUTrhSqnO...";
+        //Stimulsoft.Base.StiLicense.LoadFromFile("license.key");
+        //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
+
+        //Init options object
+        this.Options = new StiBlazorViewerOptions();
+
+        //Set some options
+        this.Options.Appearance.FullScreenMode = true;
+        this.Options.Appearance.ScrollbarsMode = true;
+        this.Options.Toolbar.ShowOpenButton = false;
+        this.Options.Toolbar.DisplayMode = StiToolbarDisplayMode.Separated;
+
+        //Create empty report object
+        this.Report = new StiReport();
+
+        //Load report template
+        this.Report.Load("Reports/TwoSimpleLists.mrt");
+    }
+}

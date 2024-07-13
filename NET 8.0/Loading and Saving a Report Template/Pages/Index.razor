@@ -1,0 +1,84 @@
+﻿@page "/"
+@using Stimulsoft.Base
+@using Stimulsoft.Report
+
+<div align="center">
+    <button class="alert" @onclick="LoadReport">Load MRT template</button>
+    <br /><br />
+    <button class="alert" @onclick="SaveReport">Save MRT template to JSON</button>
+    <br /><br />
+    <button class="alert" @onclick="RenderReport">Render report</button>
+    <br /><br />
+    <button class="alert" @onclick="SaveDocument">Save MDC document to JSON</button>
+    <br /><br /><br />
+</div>
+
+<div align="center">
+    @($"Report template has {pagesTemplateCount} page(s)")
+    <br />
+    @($"Rendered report has {pagesDocumentCount} page(s)")
+</div>
+
+<br /><br />
+
+<!--Show report template JSON string here.-->
+<div align="left">
+    <p>@(reportJSON.Length > 0 ? "Here's your report:" : "")</p>
+    <p>@reportJSON</p>
+</div>
+
+@code
+{
+    //Report for processing
+    private StiReport Report;
+
+    private int pagesTemplateCount;
+    private int pagesDocumentCount;
+    private string reportJSON = "";
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //How to activate
+        //Stimulsoft.Base.StiLicense.Key = "6vJhGtLLLz2GNviWmUTrhSqnO...";
+        //Stimulsoft.Base.StiLicense.LoadFromFile("license.key");
+        //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
+
+        //Create empty report object
+        this.Report = new StiReport();
+    }
+
+    private void LoadReport()
+    {
+        //Load report template
+        this.Report.Load("Reports/TwoSimpleLists.mrt");
+
+        //Render report
+        this.Report.Render(false);
+
+        //Show number of pages as proof that it works
+        pagesTemplateCount = this.Report.Pages.Count;
+    }
+
+    private void SaveReport()
+    {
+        //Save report template to JSON string
+        reportJSON = this.Report.SaveToJsonString();
+    }
+
+    private void RenderReport()
+    {
+        //Render report
+        this.Report.Render(false);
+
+        //Show number of pages as proof that it works
+        pagesDocumentCount = this.Report.RenderedPages.Count;
+    }
+
+    private void SaveDocument()
+    {
+        //Save rendered report to JSON string
+        reportJSON = this.Report.SaveDocumentJsonToString();
+    }
+}

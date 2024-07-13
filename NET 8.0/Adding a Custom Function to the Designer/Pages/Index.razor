@@ -1,0 +1,40 @@
+﻿@page "/"
+@using Stimulsoft.Base
+@using Stimulsoft.Report
+@using Stimulsoft.Report.Blazor
+@using Stimulsoft.Report.Web
+@using Stimulsoft.Report.Dictionary
+@using Functions
+
+<!--Report Designer-->
+<StiBlazorDesigner Report="@Report" />
+
+@code
+{
+    //Report object to use in Designer
+    private StiReport Report;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        //How to activate
+        //Stimulsoft.Base.StiLicense.Key = "6vJhGtLLLz2GNviWmUTrhSqnO...";
+        //Stimulsoft.Base.StiLicense.LoadFromFile("license.key");
+        //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
+
+        // Register function
+        StiFunctions.AddFunction("MyCategory", "MySum",
+            "description", typeof(CustomFunction),
+            typeof(decimal), "Calculates a sum of the specified set of values.",
+            new[] { typeof(object) },
+            new[] { "values" },
+            new[] { "A set of values" }).UseFullPath = false;
+
+        //Create empty report object
+        this.Report = new StiReport();
+
+        //Load report template
+        this.Report.Load("Reports/CustomFunction.mrt");
+    }
+}
