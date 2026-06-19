@@ -3,12 +3,14 @@
 @using Stimulsoft.Report
 @using Stimulsoft.Report.Web
 @using Stimulsoft.Report.Blazor
-@inject IJSRuntime JSRuntime 
+@inject IJSRuntime JSRuntime
 
 <div align="center">
-    <button @onclick="ExportReportAsHTML">Export as HTML</button> &nbsp; <button @onclick="ExportReportAsPDF">Export as PDF</button>
+    <button @onclick="ExportReportAsHTML">Export as HTML</button> &nbsp; <button @onclick="ExportReportAsPDF">Export as
+    PDF</button>
     <br /><br />
-    <input id="responseAsFile" type="checkbox" @bind="responseAsFile"><label for="responseAsFile">Response as File</label>
+    <input id="responseAsFile" type="checkbox" @bind="responseAsFile"><label for="responseAsFile">Response as
+    File</label>
     <br /><br />
     <p>@message</p>
 </div>
@@ -25,7 +27,7 @@
 
         //How to activate
         //Stimulsoft.Base.StiLicense.Key = "6vJhGtLLLz2GNviWmUTrhSqnO...";
-        //Stimulsoft.Base.StiLicense.LoadFromFile("license.key");
+        //Stimulsoft.Base.StiLicense.LoadFromFile("stimulsoft.key");
         //Stimulsoft.Base.StiLicense.LoadFromStream(stream);
 
         //Initialize JSRuntime service, only needed for response as file
